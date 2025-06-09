@@ -5,16 +5,29 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import com.example.calculator.parser.ExpressionParser;
+import com.example.calculator.operator.*;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
 class CalculatorServiceTest {
 
     private CalculatorService calculatorService;
+    private ExpressionParser parser;
+    private OperatorFactory operatorFactory;
 
     @BeforeEach
     void setUp() {
-        calculatorService = new CalculatorServiceImpl();
+        parser = new ExpressionParser();
+        operatorFactory = new OperatorFactory(
+            new ConcatenationOperator(),
+            new MultiplyOperator(),
+            new DivideOperator(),
+            new AddOperator(),
+            new SubtractOperator()
+        );
+        calculatorService = new CalculatorServiceImpl(parser, operatorFactory);
     }
 
     @Test
