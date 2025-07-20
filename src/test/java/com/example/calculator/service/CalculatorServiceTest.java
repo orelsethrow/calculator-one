@@ -139,4 +139,108 @@ class CalculatorServiceTest {
         double result = calculatorService.evaluate(expression);
         assertEquals(159.0, result);
     }
+
+    @Test
+    @DisplayName("7#2 = 15 확인")
+    void testNewConcatenation1() {
+        String expression = "7#2";
+        double result = calculatorService.evaluate(expression);
+        assertEquals(15.0, result);
+    }
+
+    @Test
+    @DisplayName("10#5 = 30 확인")
+    void testNewConcatenation2() {
+        String expression = "10#5";
+        double result = calculatorService.evaluate(expression);
+        assertEquals(30.0, result);
+    }
+
+    @Test
+    @DisplayName("1#9 = 37 확인")
+    void testNewConcatenation3() {
+        String expression = "1#9";
+        double result = calculatorService.evaluate(expression);
+        assertEquals(37.0, result);
+    }
+
+    @Test
+    @DisplayName("1#1 = 5 확인")
+    void testPattern1() {
+        String expression = "1#1";
+        double result = calculatorService.evaluate(expression);
+        assertEquals(5.0, result);
+    }
+
+    @Test
+    @DisplayName("1#2 = 9 확인")
+    void testPattern2() {
+        String expression = "1#2";
+        double result = calculatorService.evaluate(expression);
+        assertEquals(9.0, result);
+    }
+
+    @Test
+    @DisplayName("1#3 = 13 확인 (재확인)")
+    void testPattern3() {
+        String expression = "1#3";
+        double result = calculatorService.evaluate(expression);
+        assertEquals(13.0, result);
+    }
+
+    @Test
+    @DisplayName("1#11 = 45 확인")
+    void testPattern4() {
+        String expression = "1#11";
+        double result = calculatorService.evaluate(expression);
+        assertEquals(45.0, result);
+    }
+
+    @Test
+    @DisplayName("2#10 = 42 확인")
+    void testPattern5() {
+        String expression = "2#10";
+        double result = calculatorService.evaluate(expression);
+        assertEquals(42.0, result);
+    }
+
+    @Test
+    @DisplayName("1#0 = 1 확인")
+    void testPattern6() {
+        String expression = "1#0";
+        double result = calculatorService.evaluate(expression);
+        assertEquals(1.0, result);
+    }
+
+    @Test
+    @DisplayName("3#(-1) = -1 확인")
+    void testPattern7() {
+        String expression = "3#-1";
+        double result = calculatorService.evaluate(expression);
+        assertEquals(-1.0, result);
+    }
+
+    @Test
+    @DisplayName("4#1 = 8 확인")
+    void testPattern8() {
+        String expression = "4#1";
+        double result = calculatorService.evaluate(expression);
+        assertEquals(8.0, result);
+    }
+
+    @Test
+    @DisplayName("5#1 = 9 확인")
+    void testPattern9() {
+        String expression = "5#1";
+        double result = calculatorService.evaluate(expression);
+        assertEquals(9.0, result);
+    }
+
+    @Test
+    @DisplayName("6#1 = 10 확인")
+    void testPattern10() {
+        String expression = "6#1";
+        double result = calculatorService.evaluate(expression);
+        assertEquals(10.0, result);
+    }
 }
